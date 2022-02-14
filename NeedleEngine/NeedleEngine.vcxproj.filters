@@ -33,6 +33,12 @@
     <ClCompile Include="vector.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
+    <ClCompile Include="bgsprite_component.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="animsprite_component.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.hpp">
@@ -48,6 +54,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="vector.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bgsprite_component.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="animsprite_component.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

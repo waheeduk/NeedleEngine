@@ -7,6 +7,7 @@ public:
 	float x;
 	float y;
 	Vec2(float x, float y);
+	Vec2();
 };
 
 #endif

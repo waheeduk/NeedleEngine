@@ -1,5 +1,4 @@
-#ifndef ACTOR_H
-#define ACTOR_H
+#pragma once
 
 #include "vector.hpp"
 #include <vector>
@@ -51,5 +50,3 @@ private:
 	std::vector<class Component*>mComponents;
 	class Game* mGame;
 };
-
-#endif

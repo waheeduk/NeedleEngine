@@ -1,6 +1,7 @@
 #include "game.hpp"
 #include "actor.hpp"
 #include "sprite_component.hpp"
+#include "animsprite_component.hpp"
 #include <SDL_image.h>
 
 Game::Game(unsigned int screenWidth, unsigned int screenHeight)
@@ -59,10 +60,12 @@ void Game::UpdateGame()
 {
 	//clamp frames to 16ms i.e. 60fps
 	while (!SDL_TICKS_PASSED(SDL_GetTicks(), mTicksCount + 16));
-	//calculates delta time
-	float deltaTime = (SDL_GetTicks() - mTicksCount) / 1000;
-	if (deltaTime > 0.05f) deltaTime = 0.05f;
-	//update count for next frame
+
+	float deltaTime = (SDL_GetTicks() - mTicksCount) / 1000.0f;
+	if (deltaTime > 0.05f)
+	{
+		deltaTime = 0.05f;
+	}
 	mTicksCount = SDL_GetTicks();
 
 	//update all actors
@@ -127,6 +130,10 @@ void Game::GenerateOutput()
 {
 	SDL_SetRenderDrawColor(mRenderer, 0, 0, 255, 255);
 	SDL_RenderClear(mRenderer);
+	for (auto sprite : mSprites)
+	{
+		sprite->Draw(mRenderer);
+	}
 	SDL_RenderPresent(mRenderer);
 }
 
@@ -195,7 +202,6 @@ SDL_Texture* Game::GetTexture(const std::string& filename)
 //loads all the game's actors
 void Game::LoadData()
 {
-
 }
 
 void Game::AddSprite(SpriteComponent* sprite)

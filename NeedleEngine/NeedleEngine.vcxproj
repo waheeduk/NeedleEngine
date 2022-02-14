@@ -152,6 +152,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="actor.cpp" />
+    <ClCompile Include="animsprite_component.cpp" />
+    <ClCompile Include="bgsprite_component.cpp" />
     <ClCompile Include="components.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="main.cpp" />
@@ -160,6 +162,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="actor.hpp" />
+    <ClInclude Include="animsprite_component.hpp" />
+    <ClInclude Include="bgsprite_component.hpp" />
     <ClInclude Include="components.hpp" />
     <ClInclude Include="game.hpp" />
     <ClInclude Include="sprite_component.hpp" />

@@ -51,6 +51,7 @@ private:
 	std::vector<class Actor*>mPendingActors;
 	std::vector<class Actor*>deadActors;
 	std::vector<class SpriteComponent*>mSprites;
+
 };
 
 #endif
