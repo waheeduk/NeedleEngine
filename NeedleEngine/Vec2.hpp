@@ -2,6 +2,7 @@
 #define VECTOR_H
 
 #include <iostream>
+#include <cmath>
 
 class Vec2
 {
@@ -16,12 +17,19 @@ public:
 	}
 
 	Vec2 operator+(const Vec2& rhs);
+	Vec2 operator+=(const Vec2& rhs);
 	bool operator==(const Vec2& rhs);
 	Vec2 operator*(const Vec2& rhs);
+	Vec2 operator*(float scalar);
+	Vec2 operator*=(float scalar);
 	//TO DO:
 	// += -= *= /= / != NORMALISE
 	Vec2& scale(float scale);
 	Vec2& add(float val);
+
+	static float Dot(const Vec2& a, const Vec2& b);
+
+	Vec2& normalise(const Vec2& rhs);
 
 	float distance(const Vec2& rhs);
 

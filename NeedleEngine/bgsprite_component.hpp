@@ -1,7 +1,7 @@
 #pragma once
 #include "sprite_component.hpp"
 #include <vector>
-#include "vector.hpp"
+#include "Vec2.hpp"
 
 class BGSpriteComponent : public SpriteComponent
 {

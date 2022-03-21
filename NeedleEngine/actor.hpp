@@ -1,6 +1,6 @@
 #pragma once
 
-#include "vector.hpp"
+#include "Vec2.hpp"
 #include <vector>
 
 class Actor
@@ -14,6 +14,7 @@ public:
 	};
 
 	//constructor uses dependency injection to access game functions i.e. add another actor
+
 	Actor(class Game* game);
 	virtual ~Actor();
 
@@ -33,7 +34,7 @@ public:
 	void SetScale(float scale) { mScale = scale; }
 	float GetRotation() const { return mRotation; }
 	void SetRotation(float rotation) { mRotation = rotation; }
-
+	Vec2 GetForward(); //returns the forward vector from the actor's rotation angle
 	class Game* GetGame() { return mGame; }
 
 	//add remove components

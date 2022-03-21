@@ -157,8 +157,10 @@
     <ClCompile Include="components.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MoveComponent.cpp" />
     <ClCompile Include="sprite_component.cpp" />
-    <ClCompile Include="vector.cpp" />
+    <ClCompile Include="tilemap_component.cpp" />
+    <ClCompile Include="Vec2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="actor.hpp" />
@@ -166,8 +168,12 @@
     <ClInclude Include="bgsprite_component.hpp" />
     <ClInclude Include="components.hpp" />
     <ClInclude Include="game.hpp" />
+    <ClInclude Include="json.hpp" />
+    <ClInclude Include="Math.hpp" />
+    <ClInclude Include="MoveComponent.hpp" />
     <ClInclude Include="sprite_component.hpp" />
-    <ClInclude Include="vector.hpp" />
+    <ClInclude Include="tilemap_component.hpp" />
+    <ClInclude Include="Vec2.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

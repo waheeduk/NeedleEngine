@@ -30,13 +30,19 @@
     <ClCompile Include="sprite_component.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="vector.cpp">
-      <Filter>Header Files</Filter>
-    </ClCompile>
     <ClCompile Include="bgsprite_component.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
     <ClCompile Include="animsprite_component.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tilemap_component.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Vec2.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MoveComponent.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -53,13 +59,25 @@
     <ClInclude Include="sprite_component.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="vector.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="bgsprite_component.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="animsprite_component.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="json.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tilemap_component.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Vec2.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveComponent.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Math.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

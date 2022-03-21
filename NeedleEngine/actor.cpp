@@ -40,6 +40,11 @@ void Actor::UpdateActor(float deltaTime)
 
 }
 
+Vec2 Actor::GetForward()
+{
+	return Vec2(std::cos(mRotation), -std::cos(mRotation));
+}
+
 void Actor::AddComponent(class Component* component)
 {
 	mComponents.emplace_back(component);
