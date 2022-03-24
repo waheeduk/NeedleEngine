@@ -11,9 +11,12 @@ public:
 	void SetForwardSpeed(float speed) { mForwardSpeed = speed; }
 	float GetAngularSpeed() { return mAngularSpeed; }
 	void SetAngularSpeed(float speed) { mAngularSpeed = speed; }
+	void SetRotationalFlag(bool flag) { mRotationalMovement = flag; }
 private:
 	//controls rotational speed
 	float mAngularSpeed;
 	//controls movement speed
 	float mForwardSpeed;
+	//controls whether rotational control is allowed or whether its along four axes
+	bool mRotationalMovement;
 };

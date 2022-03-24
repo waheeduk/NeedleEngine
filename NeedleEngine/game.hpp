@@ -23,6 +23,9 @@ public:
 
 	void AddSprite(class SpriteComponent* sprite);
 	void RemoveSprite(class SpriteComponent* sprite);
+
+	std::vector<class Obstacle*>& GetObstacles() { return mObstacles; }
+	void AddObstacles(class Obstacle* obstacle) { mObstacles.emplace_back(obstacle); }
 private:
 	//main game loop function
 	void ProcessInput();
@@ -51,7 +54,7 @@ private:
 	std::vector<class Actor*>mPendingActors;
 	std::vector<class Actor*>deadActors;
 	std::vector<class SpriteComponent*>mSprites;
-
+	std::vector<class Obstacle*> mObstacles;
 };
 
 #endif

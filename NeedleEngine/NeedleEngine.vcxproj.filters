@@ -45,6 +45,21 @@
     <ClCompile Include="MoveComponent.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
+    <ClCompile Include="InputComponent.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="collision_component.hpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="circle_component.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="collision_component.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rect_component.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.hpp">
@@ -78,6 +93,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Math.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InputComponent.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="circle_component.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rect_component.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,5 +1,5 @@
 #include "animsprite_component.hpp"
-#include "vector.hpp"
+#include "Vec2.hpp"
 
 AnimSpriteComponent::AnimSpriteComponent(Actor* owner, int drawOrder)
 	:SpriteComponent(owner, drawOrder), mIndex(0), mLoop(true)

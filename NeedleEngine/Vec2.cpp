@@ -7,12 +7,33 @@ Vec2::Vec2(int xin, int yin)
 	: x(static_cast<float>(xin)), y(static_cast<float>(yin)) {}
 
 Vec2 Vec2::operator+(const Vec2& rhs) { return Vec2(x + rhs.x, y + rhs.y); }
-Vec2 Vec2::operator+=(const Vec2& rhs) { return Vec2(x + rhs.x, y + rhs.y); }
+Vec2 Vec2::operator+=(const Vec2& rhs) 
+{ 
+    x += rhs.x;
+    y += rhs.y;
+    return *this;
+}
+Vec2 Vec2::operator-=(const Vec2& rhs)
+{
+    x -= rhs.x;
+    y -= rhs.y;
+    return *this;
+}
 bool Vec2::operator==(const Vec2& rhs) { return (x == rhs.x) && (y == rhs.y); }
 Vec2 Vec2::operator*(const Vec2& rhs) { return Vec2(x * rhs.x, y * rhs.y); }
 Vec2 Vec2::operator*(float scalar) {     return Vec2(x *= scalar, y *= scalar); }
-Vec2 Vec2::operator*=(float scalar) {    return Vec2(x*= scalar, y*= scalar); }
-Vec2& Vec2::scale(float scale) { x *= scale; y *= scale; return *this; }
+Vec2 Vec2::operator*=(float scalar) 
+{    
+    x *= scalar;
+    y *= scalar;
+    return *this;
+}
+Vec2& Vec2::scale(float scale) 
+{ 
+    x *= scale; 
+    y *= scale;
+    return *this;
+}
 Vec2& Vec2::add(float val) { x += val; y += val; return *this; }
 
 float Vec2::distance(const Vec2& rhs)
@@ -22,6 +43,15 @@ float Vec2::distance(const Vec2& rhs)
     float dist = sqrt(xsq + ysq);
     return dist;
 }
+
+float Vec2::distanceSq(const Vec2& rhs)
+{
+    float xsq = (rhs.x - x) * (rhs.x -x);
+    float ysq = (rhs.y - y) * (rhs.y -y);
+    float dist = xsq + ysq;
+    return dist;
+}
+
 
 Vec2& Vec2::normalise(const Vec2& rhs)
 {

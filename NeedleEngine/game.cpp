@@ -4,6 +4,9 @@
 #include "animsprite_component.hpp"
 #include "tilemap_component.hpp"
 #include <SDL_image.h>
+#include "Math.hpp"
+#include "Player.hpp"
+#include "Obstacle.hpp"
 
 Game::Game(unsigned int screenWidth, unsigned int screenHeight)
 {
@@ -125,11 +128,18 @@ void Game::ProcessInput()
 	}
 	const Uint8* state = SDL_GetKeyboardState(NULL);
 	if (state[SDL_SCANCODE_ESCAPE]) mIsRunning = false;
+	mUpdatingActors = true;
+	for (auto actor : mActors)
+	{
+		actor->ProcessInput(state);
+	}
+	mUpdatingActors = false;
+
 }
 
 void Game::GenerateOutput()
 {
-	SDL_SetRenderDrawColor(mRenderer, 0, 0, 255, 255);
+	SDL_SetRenderDrawColor(mRenderer, 255, 255, 255, 255);
 	SDL_RenderClear(mRenderer);
 	for (auto sprite : mSprites)
 	{
@@ -203,13 +213,7 @@ SDL_Texture* Game::GetTexture(const std::string& filename)
 //loads all the game's actors
 void Game::LoadData()
 {
-	SDL_Texture* bg = GetTexture("assets/Tiles.png");
-	Actor* temp = new Actor(this);
-	temp->SetPosition(Vec2(100.0f, 100.0f));
-	TilemapComponent* tm = new TilemapComponent(temp);
-	tm->SetTileSize(32, 32);
-	tm->SetTexture(bg);
-	tm->LoadTilemap("assets/base_one.json");
+
 }
 
 void Game::AddSprite(SpriteComponent* sprite)
