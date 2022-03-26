@@ -7,6 +7,7 @@ Vec2::Vec2(int xin, int yin)
 	: x(static_cast<float>(xin)), y(static_cast<float>(yin)) {}
 
 Vec2 Vec2::operator+(const Vec2& rhs) { return Vec2(x + rhs.x, y + rhs.y); }
+Vec2 Vec2::operator/(float scalar) { return Vec2(x /= scalar, y /= scalar); }
 Vec2 Vec2::operator+=(const Vec2& rhs) 
 { 
     x += rhs.x;

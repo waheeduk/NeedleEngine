@@ -5,7 +5,6 @@
 #include "tilemap_component.hpp"
 #include <SDL_image.h>
 #include "Math.hpp"
-#include "Player.hpp"
 #include "Obstacle.hpp"
 
 Game::Game(unsigned int screenWidth, unsigned int screenHeight)
@@ -213,7 +212,9 @@ SDL_Texture* Game::GetTexture(const std::string& filename)
 //loads all the game's actors
 void Game::LoadData()
 {
-
+	mPlayer = new Player(this);
+	mPlayer->SetPosition(Vec2(100.0f, 100.0f));
+	mPlayer->SetForwardDir(Vec2(0.0f, -5.0f));
 }
 
 void Game::AddSprite(SpriteComponent* sprite)

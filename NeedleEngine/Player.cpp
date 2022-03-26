@@ -2,8 +2,6 @@
 #include "InputComponent.hpp"
 #include "sprite_component.hpp"
 #include "game.hpp"
-#include "circle_component.hpp"
-#include "Obstacle.hpp"
 
 Player::Player(Game* game)
 	:Actor(game)
@@ -16,8 +14,8 @@ Player::Player(Game* game)
 	InputComponent* ic = new InputComponent(this);
 	ic->SetForwardKey(SDL_SCANCODE_W);
 	ic->SetBackKey(SDL_SCANCODE_S);
-	ic->SetMaxForwardSpeed(300.0f);
-	cc->SetRadius(16.0f);
+	ic->SetMaxForwardSpeed(6000.0f);
+
 }
 
 void Player::UpdateActor(float deltaTime)

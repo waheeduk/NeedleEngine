@@ -162,6 +162,7 @@
     <ClCompile Include="InputComponent.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MoveComponent.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="rect_component.cpp" />
     <ClCompile Include="sprite_component.cpp" />
     <ClCompile Include="tilemap_component.cpp" />
@@ -178,6 +179,7 @@
     <ClInclude Include="json.hpp" />
     <ClInclude Include="Math.hpp" />
     <ClInclude Include="MoveComponent.hpp" />
+    <ClInclude Include="Player.hpp" />
     <ClInclude Include="rect_component.hpp" />
     <ClInclude Include="sprite_component.hpp" />
     <ClInclude Include="tilemap_component.hpp" />

@@ -5,7 +5,8 @@ MoveComponent::MoveComponent(class Actor* owner, int UpdateOrder )
 	:Component(owner, UpdateOrder),
 	mAngularSpeed(0.0f),
 	mForwardSpeed(0.0f),
-	mRotationalMovement(false)
+	mRotationalMovement(false),
+	mMass(0.5f)
 {
 
 }
@@ -19,7 +20,7 @@ void MoveComponent::Update(float deltaTime)
 		mOwner->SetRotation(rotation);
 	}
 
-	if (!Math::Zero(mForwardSpeed))
+	if (!Math::Zero(mSumForces))
 	{
 		if (mRotationalMovement == true)
 		{
@@ -29,9 +30,14 @@ void MoveComponent::Update(float deltaTime)
 		}
 		else
 		{
+			Vec2 acceleration = mSumForces / mMass;
+			mSumForces = Vec2(0.0f, 0.0f);
+			mVelocity += acceleration * deltaTime;
 			Vec2 pos = mOwner->GetPosition();
-			Vec2 vel = mOwner->GetForwardDir() * mForwardSpeed * deltaTime;
-			pos += vel;
+			pos += mVelocity * deltaTime;
+			std::cout << mVelocity << std::endl;
+			//Vec2 vel = mOwner->GetForwardDir() * mForwardSpeed * deltaTime;
+			/*pos += vel;*/
 			mOwner->SetPosition(pos);
 		}
 	}

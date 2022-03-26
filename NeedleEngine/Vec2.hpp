@@ -27,6 +27,7 @@ public:
 	Vec2 operator*(const Vec2& rhs);
 	Vec2 operator*(float scalar);
 	Vec2 operator*=(float scalar);
+	Vec2 operator/(float scalar);
 	//TO DO:
 	// += -= *= /= / != NORMALISE
 	Vec2& scale(float scale);

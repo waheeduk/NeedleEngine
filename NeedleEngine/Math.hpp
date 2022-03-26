@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cmath>
+#include "Vec2.hpp"
 
 namespace Math
 {
@@ -20,6 +21,18 @@ namespace Math
 	inline bool Zero(float val, float effectiveZero = 0.001f)
 	{
 		if (fabs(val) <= effectiveZero)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	inline bool Zero(Vec2 val, float effectiveZero = 0.001f)
+	{
+		if ((fabs(val.x) <= effectiveZero) && (fabs(val.y) <= effectiveZero))
 		{
 			return true;
 		}

@@ -16,15 +16,13 @@ InputComponent::InputComponent(class Actor* owner)
 void InputComponent::ProcessInput(const uint8_t* keyState)
 {
 	// Calculate forward speed for MoveComponent
-	float forwardSpeed = 0.0f;
+	
 	if (keyState[mForwardKey])
 	{
-		forwardSpeed += mMaxForwardSpeed;
+		AddForce(mOwner->GetForwardDir() * mMaxForwardSpeed);
 	}
 	if (keyState[mBackKey])
 	{
-		forwardSpeed -= mMaxForwardSpeed;
+		AddForce(mOwner->GetForwardDir() * mMaxForwardSpeed * -1.0f);
 	}
-	SetForwardSpeed(forwardSpeed);
-
 }

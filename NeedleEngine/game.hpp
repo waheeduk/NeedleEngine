@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 #include <unordered_map>
+#include "Player.hpp"
 
 class Game
 {
@@ -55,6 +56,8 @@ private:
 	std::vector<class Actor*>deadActors;
 	std::vector<class SpriteComponent*>mSprites;
 	std::vector<class Obstacle*> mObstacles;
+
+	Player* mPlayer;
 };
 
 #endif
