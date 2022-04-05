@@ -11,4 +11,6 @@ public:
 	CollisionComponent(class Actor* owner, int UpdateOrder = 10);
 	bool CircleCollision(CircleComponent& a, CircleComponent& b);
 	bool RectCollision(SDL_Rect& a, SDL_Rect& b);
+	bool CircleRectCollision(const CircleComponent& a, const RectComponent& b);
+	float ResolveCircleRectCollision(const CircleComponent& a, const RectComponent& b);
 };

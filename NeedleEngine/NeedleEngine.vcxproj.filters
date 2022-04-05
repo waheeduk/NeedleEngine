@@ -60,9 +60,6 @@
     <ClCompile Include="rect_component.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Header Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.hpp">
@@ -107,7 +104,7 @@
     <ClInclude Include="rect_component.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Player.hpp">
+    <ClInclude Include="random.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

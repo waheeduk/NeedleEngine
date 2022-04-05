@@ -4,7 +4,6 @@
 #include <vector>
 #include <string>
 #include <unordered_map>
-#include "Player.hpp"
 
 class Game
 {
@@ -25,8 +24,6 @@ public:
 	void AddSprite(class SpriteComponent* sprite);
 	void RemoveSprite(class SpriteComponent* sprite);
 
-	std::vector<class Obstacle*>& GetObstacles() { return mObstacles; }
-	void AddObstacles(class Obstacle* obstacle) { mObstacles.emplace_back(obstacle); }
 private:
 	//main game loop function
 	void ProcessInput();
@@ -36,7 +33,8 @@ private:
 
 	//renderer
 	SDL_Renderer* mRenderer;
-
+	//openGL context
+	SDL_GLContext mContext;
 	//map of all textures loaded into the game
 	std::unordered_map<std::string, SDL_Texture*> mTextures;
 
@@ -55,9 +53,6 @@ private:
 	std::vector<class Actor*>mPendingActors;
 	std::vector<class Actor*>deadActors;
 	std::vector<class SpriteComponent*>mSprites;
-	std::vector<class Obstacle*> mObstacles;
-
-	Player* mPlayer;
 };
 
 #endif

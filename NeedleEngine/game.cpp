@@ -5,7 +5,7 @@
 #include "tilemap_component.hpp"
 #include <SDL_image.h>
 #include "Math.hpp"
-#include "Obstacle.hpp"
+
 
 Game::Game(unsigned int screenWidth, unsigned int screenHeight)
 {
@@ -44,8 +44,6 @@ bool Game::Initialise()
 	IMG_Init(IMG_INIT_PNG);
 
 	LoadData();
-
-	return true;
 }
 
 void Game::RunLoop()
@@ -102,6 +100,7 @@ void Game::UpdateGame()
 void Game::Shutdown()
 {
 	//deallocates resources and closes SDL
+	SDL_GL_DeleteContext(mContext);
 	SDL_DestroyWindow(mWindow);
 	SDL_DestroyRenderer(mRenderer);
 
@@ -212,9 +211,7 @@ SDL_Texture* Game::GetTexture(const std::string& filename)
 //loads all the game's actors
 void Game::LoadData()
 {
-	mPlayer = new Player(this);
-	mPlayer->SetPosition(Vec2(100.0f, 100.0f));
-	mPlayer->SetForwardDir(Vec2(0.0f, -5.0f));
+
 }
 
 void Game::AddSprite(SpriteComponent* sprite)

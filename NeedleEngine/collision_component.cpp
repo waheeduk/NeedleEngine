@@ -36,3 +36,36 @@ bool CollisionComponent::RectCollision(SDL_Rect& a, SDL_Rect& b)
 		return false;
 	}
 }
+
+bool CollisionComponent::CircleRectCollision(const CircleComponent& a, const RectComponent& b)
+{
+	//find closest point from circle to square
+	Vec2 closest;
+	float x_right = b.GetPos().x + b.GetDimensions().x;
+	float y_right = b.GetPos().y + b.GetDimensions().y;
+	closest.x = std::max((float)b.GetPos().x, std::min(x_right, a.GetCenter().x));
+	closest.y = std::max((float)b.GetPos().y, std::min(y_right, a.GetCenter().y));
+	//see if magnitude of circle to closest point is smaller than radius meaning a collision is detected
+	float distSq = closest.distanceSq(a.GetCenter());
+	return distSq < a.GetRadiusSq();
+}
+
+float CollisionComponent::ResolveCircleRectCollision(const CircleComponent& a, const RectComponent& b)
+{
+	Vec2 closest;
+	float x_right = b.GetPos().x + b.GetDimensions().x;
+	float y_right = b.GetPos().y + b.GetDimensions().y;
+	closest.x = std::max((float)b.GetPos().x, std::min(x_right, a.GetCenter().x));
+	closest.y = std::max((float)b.GetPos().y, std::min(y_right, a.GetCenter().y));
+	//see if magnitude of circle to closest point is smaller than radius meaning a collision is detected
+	float dist = closest.distance(a.GetCenter());
+	if (dist < a.GetRadius())
+	{
+		float overlap = a.GetRadius() - dist;
+		return overlap;
+	}
+	else
+	{
+		return 0.0f;
+	}
+}

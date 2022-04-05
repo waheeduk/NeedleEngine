@@ -36,8 +36,6 @@ void MoveComponent::Update(float deltaTime)
 			Vec2 pos = mOwner->GetPosition();
 			pos += mVelocity * deltaTime;
 			std::cout << mVelocity << std::endl;
-			//Vec2 vel = mOwner->GetForwardDir() * mForwardSpeed * deltaTime;
-			/*pos += vel;*/
 			mOwner->SetPosition(pos);
 		}
 	}
